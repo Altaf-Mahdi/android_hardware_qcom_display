@@ -1,5 +1,5 @@
 #Common headers
-display_top := $(call my-dir)
+display_top := $(call project-path-for,qcom-display)
 
 use_hwc2 := false
 ifeq ($(TARGET_USES_HWC2), true)
