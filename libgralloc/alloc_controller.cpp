@@ -977,7 +977,7 @@ bool isUBwcEnabled(int format, int usage)
     return false;
 }
 
-static void getYuvUBwcWidthHeight(int width, int height, int format,
+static void getYuvUBwcWidthHeight(int width __unused, int height __unused, int format,
         int& aligned_w, int& aligned_h)
 {
     switch (format)

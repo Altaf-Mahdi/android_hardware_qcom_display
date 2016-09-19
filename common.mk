@@ -43,11 +43,11 @@ ifeq ($(ARCH_ARM_HAVE_NEON),true)
     common_flags += -D__ARM_HAVE_NEON
 endif
 
-ifeq ($(call is-board-platform-in-list, $(MSM_VIDC_TARGET_LIST)), true)
+ifeq ($(call is-board-platform-in-list, msm8996), true)
     common_flags += -DVENUS_COLOR_FORMAT
 endif
 
-ifeq ($(call is-board-platform-in-list, $(MASTER_SIDE_CP_TARGET_LIST)), true)
+ifeq ($(call is-board-platform-in-list, msm8996), true)
     common_flags += -DMASTER_SIDE_CP
 endif
 
@@ -64,7 +64,7 @@ ifeq ($(TARGET_IS_HEADLESS),true)
     common_flags += -DTARGET_HEADLESS
 endif
 
-ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
+ifeq ($(call is-vendor-board-platform,QCOM),true)
 # This check is to pick the kernel headers from the right location.
 # If the macro above is defined, we make the assumption that we have the kernel
 # available in the build tree.
